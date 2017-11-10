@@ -1,0 +1,19 @@
+<h1>ASK</h1>
+<form action="/question/show">
+    Public/Private : 
+    <select name="name">
+        <option value="XXX">익명</option>
+        <option value="<%= session[:user_email] %>">공개</option>
+    </select><br/>
+    Question <br/>
+    <input type="text" name="content"><br/>
+    <button type="submit">글쓰기</button>
+</form>
+
+<hr/>
+
+<% @questions.each do |q|%>
+    <p>Name : <%= q.name %></p>
+    <p>Content : <%= q.content %></p>
+    <hr>
+<% end %>
